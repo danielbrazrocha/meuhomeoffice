@@ -1,0 +1,48 @@
+/* PAGINA SOBRE */
+.about-div-title {
+  background-color: black;
+  opacity: 0.8;
+  margin-right: 50%;
+  margin-left: 5%;
+}
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding: 5%;
+  color: #3e3a3b;
+  text-align: center;
+}
+.about-banner-img {
+  padding-top: 15%;
+  background-image: url('/assets/aboutus.jpg');
+  height: 500px;
+  background-size: cover;
+  max-width: 100%;
+}
+.sobre-conteudo-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.sobre-conteudo-section:nth-child(even) {
+  background-color: var(--quartenaria) !important;
+}
+.sobre-conteudo-section:nth-child(odd) {
+  background-color: var(--quinaria) !important;
+}
+
+.sobre-equipe-grid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.sobre-equipe-card {
+  /* border: 3px solid red; */  
+}
+
+.about-profile-pic {
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  max-width: 150px;
+}

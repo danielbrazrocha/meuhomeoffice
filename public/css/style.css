@@ -1,0 +1,15 @@
+/* ROOT COLOURS */
+:root {
+    --primaria: #0C120C;
+    --secundaria: #BC3908;
+    --terciaria: #A94824; 
+    --quartenaria: #DB7A57;
+    --quinaria: #ECEBF3;
+}
+
+
+/* HEADER */
+.nav-link:hover{
+    color: var(--secundaria) !important;
+}
+  

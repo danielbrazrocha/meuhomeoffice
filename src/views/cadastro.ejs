@@ -1,0 +1,25 @@
+<%- include('./partials/header') %>
+  <main class="container">
+    <section class="banner">
+
+      <div class="row-2" >
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nome" aria-label="Nome">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome">
+        </div>
+      </div>
+
+      <div class="col-2">
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Sexo">
+        <datalist id="datalistOptions">
+          <option value="Femino">
+          <option value="Masculino">
+          <option value="Outro">
+        </datalist>
+      </div>
+
+    </section>
+  </main>
+  <%- include('./partials/footer') %>

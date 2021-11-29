@@ -1,44 +1,31 @@
 <%- include('./partials/header') %>
 
 <main class="container">
-  <section class="banner">
-      <div >
-          <p>PÁGINA <STRONG>INTERNA</STRONG> PARA VISUALIZAÇÃO DOS POSTS APÓS LOGIN </p>
-      </div>
-  </section>
-  <section class="servicos">
-      <div>
-          <h2>serviços</h2>
-          <div class="items">
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-          </div>
-      </div>
-  </section>
-  <section class="sobre">
-      <div >
-          <div class="text">
-              <h3>Sed ut perspiciatis unde iste natus error sit voluptatem accusantium doloremque laudantium,
-              </h3>
-              <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                  vitae
-             </p>
-          </div>
-      </div>
-  </section>
+          <!--==================== HOME ====================-->
+          <section class="home" id="home">
+            <div class="home__container container grid">
+                <div class="home__img-bg">
+                    <img src="<%= produto.image %>" alt="" class="home__img">
+                </div>
+                
+
+                <div class="home__data">
+                    <h1 class="home__title"><%= produto.title %></h1>
+                    <p class="home__description">
+                        <%= produto.description %>
+                    </p>
+                    <span class="home__price"> R$ <%= produto.price %></span>
+
+                    <div class="home__btns">
+                        <a href="#" class="button button--gray button--small">
+                            Detalhes
+                        </a>
+
+                        <button class="button home__button">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
   
 </main>
 

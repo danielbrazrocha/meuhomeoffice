@@ -1,44 +1,38 @@
 <%- include('./partials/header') %>
 
 <main class="container">
-  <section class="banner">
-      <div >
-          <p>INDEX </p>
-      </div>
-  </section>
-  <section class="servicos">
-      <div>
-          <h2>serviços</h2>
-          <div class="items">
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-              <article>
-                  <div class="thumb"></div>
-                  <h3>banho completo</h3>
-                  <h4>R$40,00</h4>
-              </article>
-          </div>
-      </div>
-  </section>
-  <section class="sobre">
-      <div >
-          <div class="text">
-              <h3>Sed ut perspiciatis unde iste natus error sit voluptatem accusantium doloremque laudantium,
-              </h3>
-              <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                  vitae
-             </p>
-          </div>
-      </div>
-  </section>
+    <section class="products section container" id="products">
+        <h2 class="section__title">
+            meuhomeoffice.com
+        </h2>
+
+        <h4 class="section__subtitle">Os melhores produtos para seu home office, você encontra aqui</h4>
+
+        <div class="products__container grid">
+
+            <% produtos.forEach(produto => { %>  
+
+                <article class="products__card">
+                    <a href="/produto/<%= produto.id %>">
+                        <div>
+
+                            <img src="<%= produto.image %>" alt="" class="products__img">
+                            
+                            <h3 class="products__title"><%= produto.title %></h3>
+                            <span class="products__price"><%= produto.price %></span>
+                            
+                            <button class="products__button">                                
+                                <i class='bx bx-shopping-bag'></i>
+                            </button>
+                        </div>
+                    </a>
+                </article>
+
+            <% }) %>
+
+            
+        </div>
+    </section>        
   
 </main>
 

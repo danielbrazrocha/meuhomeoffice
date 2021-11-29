@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const IndexController = require('../controllers/IndexController');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'MeuHomeOffice.com - A loja do seu trabalho em casa' });
-});
+// GET Login Page
+router.get('/', IndexController.index);
 
 module.exports = router;
+

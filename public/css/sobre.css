@@ -1,35 +1,14 @@
 /* PAGINA SOBRE */
-.about-div-title {
-  background-color: black;
-  opacity: 0.8;
-  margin-right: 50%;
-  margin-left: 5%;
-}
-.about-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding-left: 2rem;
-  padding-bottom: -10px;
-  padding: 5%;
-  color: #3e3a3b;
-  text-align: center;
-}
-.about-banner-img {
-  padding-top: 15%;
-  background-image: url('/assets/aboutus.jpg');
-  height: 540px;
-  background-size: cover;
-  max-width: 100%;
-}
+
 .sobre-conteudo-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.sobre-conteudo-section:nth-child(even) {
-  background-color: var(--quartenaria) !important;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .sobre-conteudo-section:nth-child(odd) {
-  background-color: var(--quinaria) !important;
+  background-color: var(--) !important;
+}
+.sobre-conteudo-section:nth-child(even) {
+  background-color: var(--first-color) !important;
 }
 
 .sobre-equipe-grid {
@@ -38,8 +17,8 @@
   text-align: center;
 }
 
-.sobre-equipe-card {
-  /* border: 3px solid red; */  
+.sobre-equipe-card a {
+  text-decoration: none;
 }
 
 .about-profile-pic {
@@ -48,26 +27,28 @@
   max-width: 150px;
 }
 
-.container-infos img {
-  margin-left: 300px;
-  margin-right: 300px;
-  height: 300px;
-  width: 500px;
-}
-
 .conteudo{
   margin-top: 70px;
 }
 
-.infos-externas{
-  margin: 0px 0px 10px 100px;
-  padding: 0px 50px 0px 50px;
-  width: 1050px;
-  height: 350px;
-  align-items: right;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
-  line-height: 20px;
+.info-wrapper{
+  padding: 0px 10% 0px 10%;
+  /* text-align: center; */
 }
+.text-info-externas {
+  margin: 1.5rem 0 1.5rem 0;
+  font-weight: 300;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+}
+.section-about-title{
+  color: var(--first-color);
+  text-align: center;
+}
+
+.sobre-link-equipe{
+  margin-top: 0.5rem;
+  color:whitesmoke;
+  text-decoration: none;
+}
+

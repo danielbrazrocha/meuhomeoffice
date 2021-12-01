@@ -225,6 +225,9 @@ body.dark-theme {
   flex-wrap: nowrap !important;
 
 }
+.navbar-brand{
+  height: max-content;
+}
 
 /* FOOTER */
 .footer-links{
@@ -239,7 +242,11 @@ body.dark-theme {
 .footer-wrapper{
   margin: 0 0.25rem 0 0.25rem;
 }
-  
+ 
+.row footer-wrapper{
+  text-align: center;
+}
+
 /* BOTOES */
 .button {
     display: inline-block;

@@ -9,6 +9,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   padding-left: 2rem;
+  padding-bottom: -10px;
   padding: 5%;
   color: #3e3a3b;
   text-align: center;
@@ -16,7 +17,7 @@
 .about-banner-img {
   padding-top: 15%;
   background-image: url('/assets/aboutus.jpg');
-  height: 500px;
+  height: 540px;
   background-size: cover;
   max-width: 100%;
 }
@@ -45,4 +46,28 @@
   margin-top: 0.5rem;
   border-radius: 50%;
   max-width: 150px;
+}
+
+.container-infos img {
+  margin-left: 300px;
+  margin-right: 300px;
+  height: 300px;
+  width: 500px;
+}
+
+.conteudo{
+  margin-top: 70px;
+}
+
+.infos-externas{
+  margin: 0px 0px 10px 100px;
+  padding: 0px 50px 0px 50px;
+  width: 1050px;
+  height: 350px;
+  align-items: right;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  line-height: 20px;
 }

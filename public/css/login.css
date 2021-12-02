@@ -30,3 +30,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* BOTOES */
+
+#cadastrese{
+  text-align: end;
+}

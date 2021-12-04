@@ -13,6 +13,7 @@ var loginRouter = require('./src/routes/login');
 var cadastroRouter = require('./src/routes/cadastro');
 var produtoRouter = require('./src/routes/produto');
 var sobreRouter = require('./src/routes/sobre');
+var envioformRouter = require('./src/routes/envioform');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/produto', produtoRouter);
 app.use('/sobre', sobreRouter);
+app.use('/envioform', envioformRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -36,3 +36,14 @@
 #cadastrese{
   text-align: end;
 }
+
+.home__button {
+  box-shadow: 0 12px 24px hsla(0, 0%, 10%, .2);
+}
+
+.login-buttons{
+  margin: 2rem 0 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

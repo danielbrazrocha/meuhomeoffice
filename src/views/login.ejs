@@ -1,6 +1,8 @@
 <%- include('./partials/header') %>
 
     <main class="form-signin">
+      <section class="section">
+         
         <form>
             <div class="mt-2 d-flex justify-content-center">
                 <img  class="mb-4" src="./assets/logo/icon.png" alt="" width="100" height="60" >
@@ -25,12 +27,14 @@
                 Esqueci minha senha
             </a>
           </div>
-          <button class="btn btn-primary background-color" type="submit">Logar</button>
-          <!-- <button class="btn btn-primary background-color" type="submit" id="cadastrese" > -->
-             <a href="/cadastro">Cadastre-se</a> 
-          <!--</button> -->
-          <p class="mt-5 mb-3 text-muted text-center">MeuHomeOffice &copy; 2021</p>
+          <div class="login-buttons">
+            <a href="/cadastro">Cadastre-se</a> 
+            <button class="button home__button" type="submit">Logar</button>
+          </div>
+          
         </form>
+
+      </section> 
       
   
 </main>

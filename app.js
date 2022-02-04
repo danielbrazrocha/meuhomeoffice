@@ -6,6 +6,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bcrypt = require('bcrypt');
 
 var indexRouter = require('./src/routes/index');
 var contatoRouter = require('./src/routes/contato');

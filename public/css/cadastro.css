@@ -13,18 +13,21 @@
 
 .avisos{
   align-items: center;
-  /* margin-left: 200px; */
 }
 
 .form{
-  margin-left: 100px;
+  margin-left: 90px;
+}
+
+.form.input{
+  
 }
 
 .formulario{
   display: inline-flex;
   flex: wrap;
   flex-direction: column;
-  flex-grow: 50px;
+  flex-grow: 30px;
 }
 
 .botao{

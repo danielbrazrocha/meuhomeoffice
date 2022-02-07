@@ -6,7 +6,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bcrypt = require('bcrypt');
+var session = require('express-session');
+var multer = require('multer')
 
 var indexRouter = require('./src/routes/index');
 var contatoRouter = require('./src/routes/contato');
@@ -15,6 +16,7 @@ var cadastroRouter = require('./src/routes/cadastro');
 var produtoRouter = require('./src/routes/produto');
 var sobreRouter = require('./src/routes/sobre');
 var envioformRouter = require('./src/routes/envioform');
+var logMiddleware = require('./src/middlewares/logSite')
 
 var app = express();
 
@@ -22,11 +24,17 @@ var app = express();
 app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+  secret:"projetoExpress",
+  resave:true,
+  saveUninitialized:true
+}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(logMiddleware);
 
 //Importing routes
 app.use('/', indexRouter);

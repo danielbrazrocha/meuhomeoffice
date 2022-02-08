@@ -16,7 +16,7 @@ module.exports = {
           key: 'id'
         }
       },
-      // product_id: {
+      // ProductId: {
       //   type: Sequelize.INTEGER,
       //   onDelete: 'CASCADE',
       //   references: {

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       // Order_Itens.belongsTo(models.Product, {
       //   // novamente o atributo sera criado automaticamente pelo sequelize
       //   // basta referenciar no migration de Order_Itens
-      //   foreignKey: "product_id",
+      //   foreignKey: "ProductId",
       //   onDelete: 'CASCADE'
       // });
     }

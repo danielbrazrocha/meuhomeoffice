@@ -11,11 +11,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      //One Order_Itens belongs to one Order_Details
+      Order_Itens.belongsTo(models.Order_Details, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Order_Itens
+        foreignKey: "order_id",
+        onDelete: 'CASCADE'
+      });
+
+      // //One Order_Itens belongs to one Product
+      // Order_Itens.belongsTo(models.Product, {
+      //   // novamente o atributo sera criado automaticamente pelo sequelize
+      //   // basta referenciar no migration de Order_Itens
+      //   foreignKey: "product_id",
+      //   onDelete: 'CASCADE'
+      // });
     }
   }
   Order_Itens.init({
-    idOrder: DataTypes.INTEGER,
-    idProduct: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order_Itens',

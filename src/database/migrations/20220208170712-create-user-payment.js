@@ -1,24 +1,32 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Discounts', {
+    await queryInterface.createTable('User_Payment', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      UserId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'User',
+          key: 'id'
+        }
+      },
+      payment_type: {
         type: Sequelize.STRING
       },
-      description: {
+      provider: {
         type: Sequelize.STRING
       },
-      discount_percent: {
-        type: Sequelize.FLOAT
+      account_number: {
+        type: Sequelize.INTEGER
       },
-      active: {
-        type: Sequelize.BOOLEAN
+      expiry: {
+        type: Sequelize.STRING
       },
       deleted_at: {
         type: Sequelize.DATE
@@ -34,6 +42,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Discounts');
+    await queryInterface.dropTable('User_Payment');
   }
 };

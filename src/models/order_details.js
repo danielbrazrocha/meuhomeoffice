@@ -11,6 +11,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Order_Details.belongsTo(models.User, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Order_Details
+        foreignKey: "UserId",
+        onDelete: 'CASCADE'
+      });
+
+      Order_Details.hasOne(models.Payment_Details, {
+        // o atributo sera criado automaticamente no modelo Payment_Details não precisando ser referenciado no model)
+        // apenas no migration
+        foreignKey: 'order_id',
+        onDelete: 'CASCADE'
+      });
+
+      Order_Details.hasMany(models.Order_Itens, {
+        // o atributo sera criado automaticamente no modelo Order_Itens não precisando ser referenciado no model
+        // apenas no migration
+        foreignKey: 'order_id',
+        onDelete: 'CASCADE'
+      });
+
     }
   }
   Order_Details.init({

@@ -11,17 +11,24 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      
+      //One User_Address belongs to one User
+      User_Address.belongsTo(models.User, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de User_Address
+        foreignKey: "UserId",
+        onDelete: 'CASCADE'
+      });
     }
   }
   User_Address.init({
-    idUser: DataTypes.INTEGER,
     description: DataTypes.STRING,
     street: DataTypes.STRING,
     number: DataTypes.INTEGER,
     details: DataTypes.STRING,
     CEP: DataTypes.STRING,
     country: DataTypes.STRING,
-    deleted_at: DataTypes.DATE
+    deletedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'User_Address',

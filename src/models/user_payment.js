@@ -11,15 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User_Payment.belongsTo(models.User, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de User_Address
+        foreignKey: "UserId",
+        onDelete: 'CASCADE'
+      });
     }
   }
   User_Payment.init({
-    idUser: DataTypes.INTEGER,
     payment_type: DataTypes.STRING,
     provider: DataTypes.STRING,
     account_number: DataTypes.INTEGER,
     expiry: DataTypes.STRING,
-    deleted_at: DataTypes.DATE
+    deletedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'User_Payment',

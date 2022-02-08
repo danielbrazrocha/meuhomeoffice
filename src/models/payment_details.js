@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Payment_Details.belongsTo(models.Order_Details, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Payment_Details
+        foreignKey: "order_id",
+        onDelete: 'CASCADE'
+      });
     }
   }
   Payment_Details.init({

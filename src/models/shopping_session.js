@@ -11,6 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      //One Shopping_Session belongs to one User
+      Shopping_Session.belongsTo(models.User, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Shopping_Session
+        foreignKey: "UserId",
+        onDelete: 'CASCADE'
+      });
+
+      Shopping_Session.hasMany(models.Cart_Item, {
+        // o atributo sera criado automaticamente no modelo Cart_Item não precisando ser referenciado no model
+        // apenas no migration
+        foreignKey: 'session_id',
+        onDelete: 'CASCADE'
+      });
+
     }
   }
   Shopping_Session.init({

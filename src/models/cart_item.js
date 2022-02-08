@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      
+      //One Cart_Item belongs to one Shopping_Session
+      Cart_Item.belongsTo(models.Shopping_Session, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Cart_Item
+        foreignKey: "session_id",
+        onDelete: 'CASCADE'
+      });
     }
   }
   Cart_Item.init({
-    idShoppingSession: DataTypes.INTEGER,
-    idProduct: DataTypes.INTEGER,
+    // idShoppingSession: DataTypes.INTEGER,
+    // idProduct: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER
   }, {
     sequelize,

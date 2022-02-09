@@ -1,21 +1,34 @@
-let usersJson = require('../mockdata/usuarios.json');
-
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const validateRegister = require('../middlewares/validator');
 
 let usuarioJson = path.join("../mockdata/usuarios.json")
 const UsuarioController = {
 
+  index: (req, res) => {
+    res.render('usuarios');
+    let usuarioId = req.params.id;
+  },
+
+  // salvaCadastro: (req, res) => {
+  //   let {nome, email, senha} = req.body;
+  //   let senhaC = bcrypt.hashSync(senha, 10)
+  //   let usuario = JSON.stringify({nome, email, senha:senhaC});
+    
+  //   fs.writeFileSync(usuarioJson, usuario)
+  //   res.send('Usuário cadastrado com sucesso!');
+  // },
+
   loginForm: (req, res) => {
     res.render('login')
   },  
-  usuarioLogado: (req, res) => {
+  logarUsuario: (req, res) => {
     let {email, senha} = req.body;
     let usuarioSalvo = fs.readFileSync(usuarioJson,{encoding: 'utf-8'});
     usuarioSalvo = JSON.parse(usuarioSalvo);
 
-    if(email != usuarioSalvo.email){
+    if(email != usuarioSalvo.email) {
       return res.send('Usuário inválido!');
     }
 
@@ -25,22 +38,12 @@ const UsuarioController = {
 
     req.session.usuario = usuarioSalvo
 
-    res.redirect("/");
-  },    
+    if(logado != undefined){
+      res.cookie('usuarioLogado', usuarioSalvo.email, {maxAge:600000})
+    }
 
-  // registraSenhaCadastro: (req, res) => {
-  //   res.render('registraSenhaCadastro')
-  //   // let usuarioId = req.params.id;
-  //   // let usuarioJson = mockdata.find(usuario => usuario.id == UsuarioId);
-  // },
-  // salvaSenhaCadastro: (req, res) => {
-  //   let {nome, email, senha} = req.body;
-  //   let senhaC = bcrypt.hashSync(senha, 10)
-  //   let usuario = JSON.stringify({nome, email, senha:senhaC});
-    
-  //   fs.writeFileSync(usuarioJson, usuario)
-  //   res.send('Usuário cadastrado com sucesso!');
-  // }, 
+    res.redirect("/produtos");
+  }     
 }
 
 module.exports = UsuarioController;

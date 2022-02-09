@@ -1,22 +1,6 @@
-var express = require('express'); 
+var express = require('express');
 var router = express.Router();
-const multer = require('multer');
-const path = require('path');
-const logDBMiddleware = require('../middlewares/logDB');
-const {check, validationResult, body} = require('express-validator');
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb){
-      cb(null, '/uploads')
-    },
-    filename: function(req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
-    }
-  })
-
-  var upload = multer ({ storage: storage })
-
-const usuarioController = require('../controllers/UsuarioController')
+const UsuarioController = require('../controllers/UsuarioController');
 
 // Verificar com o Daniel como será feita a parte de validação de informações
 
@@ -40,7 +24,6 @@ check('password repeat')
   .isLength({min:8, max: 25}).withMessage
 ], usuarioController.salvaForm);*/
 
-router.get('/', usuarioController.usuario);
-router.post('/', usuarioController.usuario);
+router.get('/', UsuarioController.index);
 
 module.exports = router;

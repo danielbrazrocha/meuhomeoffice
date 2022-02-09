@@ -22,3 +22,5 @@ const validateRegister = [
 // Confirmar com Daniel como fazer a parte do roteamento
 // router.post('/', validateRegister, UsuarioController.processRegister);
 // router.post('/cadastro', UsuarioCOntroller.registro);
+
+module.exports = validateRegister;

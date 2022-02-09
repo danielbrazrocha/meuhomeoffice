@@ -33,7 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     // idDiscount: DataTypes.INTEGER,
     // idInventory: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.STRING(2000),
+    image: DataTypes.STRING,
     SKU: DataTypes.STRING,
     price: DataTypes.FLOAT,
     deleted_at: DataTypes.DATE

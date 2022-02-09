@@ -20,13 +20,13 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE'
       });
 
-      // //One Order_Itens belongs to one Product
-      // Order_Itens.belongsTo(models.Product, {
-      //   // novamente o atributo sera criado automaticamente pelo sequelize
-      //   // basta referenciar no migration de Order_Itens
-      //   foreignKey: "ProductId",
-      //   onDelete: 'CASCADE'
-      // });
+      //One Order_Itens belongs to one Product
+      Order_Itens.belongsTo(models.Product, {
+        // novamente o atributo sera criado automaticamente pelo sequelize
+        // basta referenciar no migration de Order_Itens
+        foreignKey: "ProductId",
+        onDelete: 'CASCADE'
+      });
     }
   }
   Order_Itens.init({

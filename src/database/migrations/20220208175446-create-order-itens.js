@@ -16,14 +16,14 @@ module.exports = {
           key: 'id'
         }
       },
-      // ProductId: {
-      //   type: Sequelize.INTEGER,
-      //   onDelete: 'CASCADE',
-      //   references: {
-      //     model: 'Product',
-      //     key: 'id'
-      //   }
-      // },
+      ProductId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Product',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

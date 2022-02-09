@@ -11,21 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Product.hasMany(models.Cart_Item, {
-      //   // o atributo sera criado automaticamente no modelo Cart_Item não precisando ser referenciado no model
-      //   // apenas no migration
-      //   foreignKey: 'ProductId',
-      //   onDelete: 'CASCADE'
-      // });
-      // Product.hasMany(models.Order_Itens, {
-      //   // o atributo sera criado automaticamente no modelo Order_Itens não precisando ser referenciado no model
-      //   // apenas no migration
-      //   foreignKey: 'ProductId',
-      //   onDelete: 'CASCADE'
-      // });
+      Product.hasMany(models.Cart_Item, {
+        // o atributo sera criado automaticamente no modelo Cart_Item não precisando ser referenciado no model
+        // apenas no migration
+        foreignKey: 'ProductId',
+        onDelete: 'CASCADE'
+      });
+      Product.hasMany(models.Order_Itens, {
+        // o atributo sera criado automaticamente no modelo Order_Itens não precisando ser referenciado no model
+        // apenas no migration
+        foreignKey: 'ProductId',
+        onDelete: 'CASCADE'
+      });
 
 
-      
+
     }
   }
   Product.init({

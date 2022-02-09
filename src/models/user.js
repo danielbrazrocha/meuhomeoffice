@@ -23,17 +23,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'UserId',
         onDelete: 'CASCADE'
       });
-      User.hasOne(models.Shopping_session, {
+      User.hasOne(models.Shopping_Session, {
         // o atributo sera criado automaticamente no modelo Shopping_session não precisando ser referenciado no model)
         // apenas no migration
-        foreignKey: 'UserId',
+        foreignKey: 'UserId1',
         onDelete: 'CASCADE'
       });
-
       User.hasOne(models.Order_Details, {
         // o atributo sera criado automaticamente no modelo Order_Details não precisando ser referenciado no model)
         // apenas no migration
-        foreignKey: 'UserId',
+        foreignKey: 'UserId2',
         onDelete: 'CASCADE'
       });
 

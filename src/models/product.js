@@ -37,10 +37,11 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
     SKU: DataTypes.STRING,
     price: DataTypes.FLOAT,
-    deleted_at: DataTypes.DATE
+    deletedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Product',
+    freezeTableName: true
   });
   return Product;
 };

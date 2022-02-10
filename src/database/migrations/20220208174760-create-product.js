@@ -47,7 +47,7 @@ module.exports = {
       price: {
         type: Sequelize.FLOAT
       },
-      deleted_at: {
+      deletedAt: {
         type: Sequelize.DATE
       },
       createdAt: {

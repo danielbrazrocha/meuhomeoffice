@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Cart_Item',
+    freezeTableName: true
   });
   return Cart_Item;
 };

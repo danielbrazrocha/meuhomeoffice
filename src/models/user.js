@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     kind: DataTypes.STRING,
     name: DataTypes.STRING,
+    password: DataTypes.STRING,
     cpf: DataTypes.STRING,
     tel: DataTypes.STRING,
     email: DataTypes.STRING,
@@ -50,6 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
+    freezeTableName: true
   });
   return User;
 };

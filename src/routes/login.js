@@ -4,5 +4,8 @@ const LoginController = require('../controllers/LoginController');
 
 // GET Login Page
 router.get('/', LoginController.index);
+// router.get('/login', LoginController.loginForm);
+// // Post Login Page
+// router.post('/login', LoginController.salvaSenha);
 
 module.exports = router;

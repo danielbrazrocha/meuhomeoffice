@@ -19,10 +19,6 @@ const ProdutoController =  {
                 textoErro: 'Produto não encontrado, refaça sua busca ou tente novamente'
             });
         }
-
-
-
-
     }
 
 }

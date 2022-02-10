@@ -1,0 +1,24 @@
+{
+  "cSpell.words": [
+    "cadastrado",
+    "Cadastro",
+    "email",
+    "inválida",
+    "inválido",
+    "mockdata",
+    "produtos",
+    "registra",
+    "salva",
+    "sucesso",
+    "usuarios",
+    "Usuarios"
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:meuhomeoffice}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
+}

@@ -210,7 +210,6 @@ body.dark-theme {
     position: relative;
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-3);
-    /* text-transform: uppercase; */
     letter-spacing: 2px;
     text-align: center;
   }

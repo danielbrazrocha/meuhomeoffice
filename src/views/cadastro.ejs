@@ -10,20 +10,20 @@
           <li>Senha precisa ter entre 6 e 12 caracteres</li>
         </ul>
       </div>
-      <div class="form">
+      <div class="form" action="/register" method="post" enctype="multipart/form-data">
         <form action="/" method="POST" class='formulario'>
           <label>Nome</label>
-          <input type="text" class="nome validar">
+          <input type="text" name="nome" class="nome validar">
           <label>Sobrenome</label>
-          <input type="text" class="sobrenome validar">
+          <input type="text" name="sobrenome" class="sobrenome validar">
           <label>CPF</label>
-          <input type="text" class="cpf validar">
-          <!-- <label>Usuário</label>
-          <input type="text" class="usuario validar"> -->
+          <input type="text" name="cpf" class="cpf validar">
+          <label>E-mail</label>
+          <input type="email" name="email" class="email validar"> 
           <label>Senha</label>
-          <input type="password" class="senha validar">
+          <input type="password" name="senha" class="senha validar">
           <label>Repetir Senha</label>
-          <input type="password" class="repetir-senha validar">
+          <input type="password" name="repete-senha" class="repetir-senha validar">
           <button type="submit" class="botao">Enviar</button>
         </form>
       </div>

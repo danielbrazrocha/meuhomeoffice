@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.banner{
+  display: grid;
+  grid-template-columns: 450px;
+  grid-template: max-content;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.avisos{
+  align-items: center;
+  /* margin-left: 200px; */
+}
+
+.form{
+  margin-left: 20%;
+  flex: space-between;
+}
+
+.form-contato{
+  display: inline-flex;
+  flex: wrap;
+  flex-direction: column;
+  flex-grow: 50px;
+}
+
+.botao{
+  margin-top: 35px;
+  margin-bottom: 45px;
+  border-color: 10px rgb(241, 3, 3);
+}
+
+.input{
+  box-shadow: 10 10 10 10px;
+}

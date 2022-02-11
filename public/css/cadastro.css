@@ -43,3 +43,13 @@
   width: 800px;
   box-shadow: 10 10 10 10px;
 }
+
+.register-error-alert{
+  color: var(--first-color);
+  text-align: center;
+}
+
+.register-sucess-alert{
+  color: green;
+  text-align: center;
+}

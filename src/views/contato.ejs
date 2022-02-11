@@ -1,89 +1,82 @@
 <%- include('./partials/header') %>
 
+  <main class="">
+    
+    <section>
+      <div class='sobre-conteudo-section'>
+        <div class="info-wrapper">        
+          <div class="container-infos">
+            <h2 class="section-about-title">Fale Conosco</h2>
+            <h4 class="text-info-externas">
+              Nessa página de contato estão disponíveis formulários para envio
+              de sugestões, críticas, elogios e as perguntas frequentes. Caso
+              não consiga encontrar o que procurar, por favor preencha o
+              formulário no final da página que entraremos em contato para
+              lhe auxiliar no for possível.
+            </h4>
 
+          </div> 
+      </div>
+      </div>      
+      <div class='sobre-conteudo-section'>
+        <div class="info-wrapper">        
+          <div class="sobre-equipe-grid">
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2158085587475!2
+                            d-46.67527214997296!3d-23.560691467376298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+                            1s0x94ce5781c850157f%3A0x936e30e6557ac603!2sR.%20Capote%20Valente%2C%2036%20-%20Pinheiros
+                            %2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005401-000!5e0!3m2!1spt-BR!2sbr!4v1643914261343!5m2!1
+                            spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" >
+                                </iframe>
+            
+          </div> 
+      </div>
+      </div>
 
-    <main class="container">
-        <section class="banner">
-            <div>
-                <p>CONTATO</p>
+      <div class='sobre-conteudo-section'>
+        <div class="info-wrapper">
+          <h2 class="section-about-title">
+           Meu Home Office
+          </h2>
+          <div class="text-info-externas">              
+            <p>
+              Rua Capote Valente, 36 - Pinheiros, São Paulo <br>
+              Telefone: (11) 55351-4545 (11) 55351-4545
+          </p>
+        </div>
+        </div>
+      </div>
+      <div class="sobre-conteudo-form">
+        <div class="info-wrapper">
+          <h2>Entre em contato com Meu Home Office</h2>
+          <form class="form-contato" action="https://formsubmit.co/faelalvesoliveira06@gmail.com"
+              method="POST">
+              <input type="hidden" name="_next" value="http://localhost:3000/envioform.ejs">
+              <input type="hidden" name="_cc" value="atendimento@meuhomeoffice.com" />
+              <input type="hidden" name="autoresponse" value="Recebemos sua mensagem, obrigado.
+              Assim que for possível responderemos." />
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="name" placeholder="Nome" />
+              <input type="text" name="subject" placeholder="Assunto" />
+              <input type="email" name="email" placeholder="E-mail" />
+              <textarea name="message" placeholder="Mensagem"></textarea>
+              <button type="submit">Enviar</button>
+          </form>
+              </div>
             </div>
-        </section>
-        <section class="sobre">
-            <div>
-                <div class="text">
-                    <h3>Fale Conosco</h3>
-                    <p>Nessa página de contato estão disponíveis formulários para envio
-                        de sugestões, críticas, elogios e as perguntas frequentes. Caso
-                        não consiga encontrar o que procurar, por favor preencha o
-                        formulário no final da página que entraremos em contato para
-                        lhe auxiliar no for possível.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="servicos">
-            <div>
-                <!-- <h2>Contato</h2> -->
-                <div class="items">
-                    <article>
-                        <h1>Meu Home Office</h1>
-                        <p>
-                            Rua Capote Valente, 36 - Pinheiros, São Paulo
-                        </p>
-                        <p>
-                            Telefone: (11) 55351-4545
-                            Telefone Fixo: (11) 55351-4545
-                        </p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2158085587475!2
-                        d-46.67527214997296!3d-23.560691467376298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
-                        1s0x94ce5781c850157f%3A0x936e30e6557ac603!2sR.%20Capote%20Valente%2C%2036%20-%20Pinheiros
-                        %2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005401-000!5e0!3m2!1spt-BR!2sbr!4v1643914261343!5m2!1
-                        spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy">
-                        </iframe>
-                        <p>
-                            E-mail: atendimento@meuhomeoffice.com.br
-                        </p>
-                        <h3>Envio de formulário</h3>
-                        <form class="form-contato" action="https://formsubmit.co/faelalvesoliveira06@gmail.com"
-                            method="POST">
-                            <input type="hidden" name="_next" value="http://localhost:3000/envioform.ejs">
-                            <input type="hidden" name="_cc" value="atendimento@meuhomeoffice.com" />
-                            <input type="hidden" name="autoresponse" value="Recebemos sua mensagem, obrigado.
-                            Assim que for possível responderemos." />
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="text" name="name" placeholder="Nome" />
-                            <input type="text" name="subject" placeholder="Assunto" />
-                            <input type="email" name="email" placeholder="E-mail" />
-                            <textarea name="message" placeholder="Mensagem"></textarea>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </article>
-                    <article>
-                        <div id="mapa"></div>
-                        <!-- <script>
-                            function inicializar() {
-                                var localizacao = { lat: -22.5415, lng: -47.12312 };
+          </div>
+        </div>
+      
+      <div class="sobre-conteudo-section">
+        <div class="info-wrapper">
+          
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
 
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                    zoom: 15,
-                                    center: coordenadas
-                                });
+    </section>
+  </main>
 
-                                var marker = new google.maps.Marker({
-                                    position: coordenadas,
-                                    map: mapa,
-                                    title: 'My marker'
-                                });
-                            }
-                        </script>
-                        <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDycTZaBY94bhGV5h7s3x-jIu7_n2fwTzw&callback=initMap">
-                            </script> -->
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-    <%- include('./partials/footer') %>
+  <%- include('./partials/footer') %>

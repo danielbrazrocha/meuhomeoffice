@@ -8,6 +8,13 @@
 
         <h4 class="section__subtitle">Os melhores produtos para seu home office você encontra aqui:</h4>
 
+
+        <!-- Visualização da mensagem de busca sem resultado -->
+        <% if (typeof alert != 'undefined') { %> 
+            <h4 class="h3 search-error-alert"><%= alert %> </h4>
+          <% } %> 
+
+
         <div class="products__container grid">
 
             <% produtos.forEach(produto => { %>  

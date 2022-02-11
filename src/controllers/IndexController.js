@@ -1,8 +1,11 @@
 const { Product } = require('../models');
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
 
 const IndexController =  {
-    // index = método do controller para renderizar uma view, chamado em index.js
+    // index = método do controller para renderizar uma view com um grid de todos os produtos
+    // chamado em index.js
     async index(req, res, next) {
         try {
             const productList = await Product.findAll({
@@ -11,8 +14,37 @@ const IndexController =  {
                 }
             });
 
-            // console.log(productList);
-            
+            // indica o arquivo EJS dentro de view a ser chamado
+            return res.render('index', {
+                title: 'meuhomeoffice.com',
+                produtos: productList
+            });
+        } catch (error) {
+            return res.status(400).json({ message: 'Error' + error});
+        }
+    },
+
+    // searchResults = método do controller para renderizar uma view com um grid de todos os produtos
+    // encontrados na busca da NavBar
+    async searchResults(req, res, next) {
+        const { queryTxt } = req.body;
+        try {
+            const productList = await Product.findAll({
+                where: {                    
+                    deletedAt: null,
+                    name: { [Op.substring]: queryTxt }
+                }
+            });
+
+            // caso a busca não retorne nenhum produto, renderizar a view Index com uma mensagem de alerta
+            if (productList.length === 0) {
+                return res.render('index', {
+                    arquivoCss: 'index.css',
+                    produtos: productList,
+                    alert: "Nenhum produto encontrado!"
+                });
+              }
+
             // indica o arquivo EJS dentro de view a ser chamado
             return res.render('index', {
                 title: 'meuhomeoffice.com',

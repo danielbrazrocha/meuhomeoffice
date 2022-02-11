@@ -357,6 +357,11 @@ body.dark-theme {
     box-shadow: 0 8px 32px hsla(0, 0%, 10%, .1);
   }
 
+  .search-error-alert{
+    color: var(--first-color);
+    text-align: center;
+  }
+
   /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {

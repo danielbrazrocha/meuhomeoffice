@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const ProdutoController = require('../controllers/ProdutoController');
-let auth = require('../middlewares/auth');
+const isAuth = require('../middlewares/isAuth');
 
 // GET Posts Page
-router.get('/:id', ProdutoController.detalhesProduto);
-router.get('/', auth);
+router.get('/:id', isAuth, ProdutoController.detalhesProduto);
 
 module.exports = router;

@@ -8,6 +8,16 @@ const CadastroController =  {
     // showRegister = método do controller para renderizar a view com os forms de cadastro,
     // chamado em index.js
     showRegister: (req, res) => {
+        //verificando se existe uma sessão de usuário ativa, passando globalmente a variavel user para a view
+        //deverá ser feito esta operação a cada route que utilize o middleware de autenticação isAuth
+        const {user} = req.session;
+
+        // verifica se o usuário já existe, redirecionando para a home caso já esteja logado
+        if (user){
+            return res.redirect('/');
+        }
+
+
         // indica o arquivo EJS dentro de view a ser chamado
         return res.render('cadastro', {
             arquivoCss: 'cadastro.css',
@@ -16,7 +26,6 @@ const CadastroController =  {
 
     // register = método do controller para evniar os dados do formulário de cadastro
     async register(req, res, next) {
-        // console.log(validationResult(req));
         //criando a variável para armazenar os erros de validação
         console.log('chamando register no controller aqui');
         let errors = validationResult(req);

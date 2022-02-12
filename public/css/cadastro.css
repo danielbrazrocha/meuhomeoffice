@@ -53,3 +53,58 @@
   color: green;
   text-align: center;
 }
+
+
+/* PAGINA LOGIN */
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+/* .form-signin input[id="nome"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[id="repeatpassword"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+} */
+
+.form-signin input{
+  margin-bottom: -1px;
+}
+
+.j-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BOTOES */
+
+.home__button {
+  box-shadow: 0 12px 24px hsla(0, 0%, 10%, .2);
+}
+
+.login-buttons{
+  margin: 2rem 0 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-error-alert{
+  color: var(--first-color);
+  text-align: center;
+}

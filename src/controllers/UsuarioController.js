@@ -20,7 +20,7 @@ const UsuarioController = {
   //   res.send('Usuário cadastrado com sucesso!');
   // },
 
-  loginForm: (req, res) => {
+  /*loginForm: (req, res) => {
     res.render('login')
   },  
   logarUsuario: (req, res) => {
@@ -43,7 +43,7 @@ const UsuarioController = {
     }
 
     res.redirect("/produtos");
-  }     
+  }     */
 }
 
 module.exports = UsuarioController;

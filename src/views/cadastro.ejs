@@ -1,6 +1,7 @@
 <%- include('./partials/header') %>
   <main class="container">
     <section class="banner">
+      <% if (typeof errors == 'undefined') { %> 
       <div class="avisos">
         <h1>Formulário de cadastro</h1>
         <ul>
@@ -10,26 +11,41 @@
           <li>Senha precisa ter entre 6 e 12 caracteres</li>
         </ul>
       </div>
+      <% } %>
+
+      <!-- Visualação condicional dos erros de validação do express-validator -->
+      <% if (typeof errors != 'undefined') { %> 
+        <p class="text-danger">Foram encontrados erros na sua solicitação.<br>Corrija as informações e envie novamente.</p>
+        <ul>
+          <% errors.forEach(error => { %>  
+            <li class="register-error-alert" ><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+
+      <!-- Visualização dos erros no backend -->
+      <% if (typeof error != 'undefined') { %> 
+        <h4 class="h5 register-error-alert"><%= error %> </h4>
+      <% } %> 
+
+
       <div class="form">
         <form action="/cadastro" method="POST" class='formulario'>
           <label>Nome</label>
-          <input type="text" name="nome" class="nome validar">
+          <input type="text" placeholder="Ex.: José Silva" name="nome" class="nome validar" id="nome" value="<%= locals.old && old.nome %>">
           <label>CPF</label>
-          <input type="text" name="cpf" class="sobrenome validar">
-          <label>Telefone</label>
-          <input type="text" name="tel" class="cpf validar">
+          <input type="text" placeholder="xxx.xxx.xxx-xx" name="cpf" class="sobrenome validar" id="cpf" value="<%= locals.old && old.cpf %>">
+          <label>Celular</label>
+          <input type="text" placeholder="(xx)xxxx-xxxx" name="tel" class="cpf validar" id="tel" value="<%= locals.old && old.tel %>">
           <label>E-mail</label>
-          <input type="email" name="email" class="email validar"> 
+          <input type="email" placeholder="jose@mail.com.br" name="email" class="email validar" id="email" value="<%= locals.old && old.email %>"> 
           <label>Senha</label>
           <input type="password" name="senha" class="senha validar">
           <label>Repetir Senha</label>
           <input type="password" name="repeteSenha" class="repetir-senha validar">
           <button type="submit" class="botao">Enviar</button>
 
-          <!-- Visualização dos erros no backend -->
-          <% if (typeof error != 'undefined') { %> 
-            <h4 class="h5 register-error-alert"><%= error %> </h4>
-          <% } %> 
+
 
           <!-- Visualização da mensagem de sucesso -->
           <% if (typeof sucess != 'undefined') { %> 

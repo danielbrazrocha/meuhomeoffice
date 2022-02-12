@@ -7,5 +7,8 @@ const isAuth = require('../middlewares/isAuth');
 router.get('/', isAuth, LoginController.showLogin);
 // Post para processar os dados do formulário de Login
 router.post('/', LoginController.logon);
+// GET Logout Page
+router.get('/logout', LoginController.logoff);
+
 
 module.exports = router;

@@ -19,6 +19,7 @@ const LoginController =  {
             arquivoCss: 'login.css'
         });
     },
+
     // logon = método do controller para processar os dados do formulário de Login
     async logon(req, res) {
         try {
@@ -61,6 +62,16 @@ const LoginController =  {
         });
         }
       },
+
+
+      // logoff = método do controller para realizar logout
+    async logoff(req, res) {
+      //deletando os dados da sessão
+      req.session.user = null;
+      //redirecionando a home
+      return res.redirect("/");
+      
+    },
 
     
 

@@ -7,12 +7,18 @@ const IndexController =  {
     // index = método do controller para renderizar uma view com um grid de todos os produtos
     // chamado em index.js
     async index(req, res, next) {
+        //verificando se existe uma sessão de usuário ativa, passando globalmente a variavel user para a view
+        //deverá ser feito esta operação a cada route que utilize o middleware de autenticação isAuth
+        const {user} = req.session;
+
         try {
             const productList = await Product.findAll({
                 where: {
                     deletedAt: null
                 }
             });
+
+
 
             // indica o arquivo EJS dentro de view a ser chamado
             return res.render('index', {
@@ -27,7 +33,14 @@ const IndexController =  {
     // searchResults = método do controller para renderizar uma view com um grid de todos os produtos
     // encontrados na busca da NavBar
     async searchResults(req, res, next) {
+        //verificando se existe uma sessão de usuário ativa, passando globalmente a variavel user para a view
+        //deverá ser feito esta operação a cada route que utilize o middleware de autenticação isAuth
+        const {user} = req.session;
+
+
+        //salvando o valor da query
         const { queryTxt } = req.body;
+
         try {
             const productList = await Product.findAll({
                 where: {                    
@@ -48,7 +61,8 @@ const IndexController =  {
             // indica o arquivo EJS dentro de view a ser chamado
             return res.render('index', {
                 title: 'meuhomeoffice.com',
-                produtos: productList
+                produtos: productList,
+                usuarioLogado
             });
         } catch (error) {
             return res.status(400).json({ message: 'Error' + error});

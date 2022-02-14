@@ -62,7 +62,6 @@ const IndexController =  {
             return res.render('index', {
                 title: 'meuhomeoffice.com',
                 produtos: productList,
-                usuarioLogado
             });
         } catch (error) {
             return res.status(400).json({ message: 'Error' + error});

@@ -13,9 +13,9 @@ const CadastroController =  {
         const {user} = req.session;
 
         // verifica se o usuário já existe, redirecionando para a home caso já esteja logado
-        if (user){
-            return res.redirect('/');
-        }
+        // if (user){
+        //     return res.redirect('/');
+        // }
 
 
         // indica o arquivo EJS dentro de view a ser chamado
@@ -27,7 +27,7 @@ const CadastroController =  {
     // register = método do controller para enviar os dados do formulário de cadastro
     async registerProduct(req, res, next) {
         //criando a variável para armazenar os erros de validação
-        console.log('chamando register no controller aqui');
+        // console.log('chamando register no controller aqui');
         let errors = validationResult(req);
 
         //verificando se há erros de validação
@@ -89,7 +89,7 @@ const CadastroController =  {
                 });
                 
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             return res.render('cadastro', {
                 arquivoCss: 'cadastro.css',
                 error: "Sistema indisponivel no momento. Tente novamente em alguns instantes.",

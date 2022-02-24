@@ -16,6 +16,7 @@ var cadastroRouter = require('./src/routes/cadastro');
 var produtoRouter = require('./src/routes/produto');
 var sobreRouter = require('./src/routes/sobre');
 var usuarioRouter = require('./src/routes/usuario');
+var adicionarProdutoRouter = require('./src/routes/adicionarProduto');
 var logMiddleware = require('./src/middlewares/logSite');
 var cookieMiddleware = require('./src/middlewares/cookiesLogin');
 
@@ -49,6 +50,7 @@ app.use('/cadastro', cadastroRouter);
 app.use('/produto', produtoRouter);
 app.use('/sobre', sobreRouter);
 app.use('/usuario', usuarioRouter);
+app.use('/adicionarProduto', adicionarProdutoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

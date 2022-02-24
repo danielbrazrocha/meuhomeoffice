@@ -47,6 +47,7 @@ const LoginController =  {
           req.session.user = {
             id: user.id,
             name: user.name,
+            kind: user.kind,
           };
           
           //alterar posteriormente para pagina de logado

@@ -3,8 +3,9 @@
     <section class="banner">
       <% if (typeof errors == 'undefined') { %> 
       <div class="avisos">
-        <h1 class="mt-4">Cadastro de produto</h1>
+        <h1 class="mt-4">Adicionar de produto</h1>
         <ul>
+          <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
           <li>Nenhum campo pode estar vazio</li>
           <li>Usuário só poderá conter letras e/ou números</li>
           <li>Usuário deverá ter entre 3 e 12 caracteres</li>
@@ -31,16 +32,16 @@
 
       <div class="form-signin">
         <form action="/cadastro" method="POST" class='form-floating'>
-          <div class="form-floating">
-            <input type="text" placeholder="Ex.: José da Silva" name="nome" class="nome form-control validar" id="nome" value="<%= locals.old && old.nome %>">
+          <div data-toggle="tooltip" title="Ex.: José da Silva" class="form-floating">
+            <input  type="text" placeholder="Ex.: José da Silva" name="nome" class="nome form-control validar" id="nome" value="<%= locals.old && old.nome %>">
             <label for="nome">Nome</label>
           </div>
-          <div class="form-floating">
+          <div data-toggle="tooltip" title="apenas 11 dígitos" class="form-floating">
             <input type="text" placeholder="xxx.xxx.xxx-xx" name="cpf" class="sobrenome form-control validar" id="cpf" value="<%= locals.old && old.cpf %>">
             <label for="cpf">CPF</label>
           </div>
           <div class="form-floating">
-            <input type="text" placeholder="(xx)xxxx-xxxx" name="tel" class="cpf form-control validar" id="tel" value="<%= locals.old && old.tel %>">
+            <input type="text" placeholder="(xx)xxxxx-xxxx" name="tel" class="cpf form-control validar" id="tel" value="<%= locals.old && old.tel %>">
             <label for="tel">Celular</label>
           </div>
           <div class="form-floating">

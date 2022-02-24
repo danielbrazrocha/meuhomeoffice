@@ -2,15 +2,8 @@
   <main class="container">
     <section class="banner">
       <% if (typeof errors == 'undefined') { %> 
-      <div class="avisos">
-        <h1 class="mt-4">Adicionar de produto</h1>
-        <ul>
-          <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
-          <li>Nenhum campo pode estar vazio</li>
-          <li>Usuário só poderá conter letras e/ou números</li>
-          <li>Usuário deverá ter entre 3 e 12 caracteres</li>
-          <li>Senha precisa ter entre 6 e 12 caracteres</li>
-        </ul>
+      <div class="avisos justify-content-center">
+        <h1 class="mt-4 ">Adicionar produto</h1>
       </div>
       <% } %>
 
@@ -31,35 +24,30 @@
 
 
       <div class="form-signin">
-        <form action="/cadastro" method="POST" class='form-floating'>
-          <div data-toggle="tooltip" title="Ex.: José da Silva" class="form-floating">
-            <input  type="text" placeholder="Ex.: José da Silva" name="nome" class="nome form-control validar" id="nome" value="<%= locals.old && old.nome %>">
+        <form action="/adicionarProduto" method="POST" class='form-floating'>
+          <div data-toggle="tooltip" title="Nome do produto" class="form-floating">
+            <input  type="text" name="nome" class="nome form-control validar" id="nome" value="<%= locals.old && old.nome %>">
             <label for="nome">Nome</label>
           </div>
-          <div data-toggle="tooltip" title="apenas 11 dígitos" class="form-floating">
-            <input type="text" placeholder="xxx.xxx.xxx-xx" name="cpf" class="sobrenome form-control validar" id="cpf" value="<%= locals.old && old.cpf %>">
-            <label for="cpf">CPF</label>
+          <div data-toggle="tooltip" title="número da categoria" class="form-floating">
+            <input type="text" name="category" class="category form-control validar" id="cpf" value="<%= locals.old && old.cpf %>">
+            <label for="category">Categoria</label>
           </div>
-          <div class="form-floating">
-            <input type="text" placeholder="(xx)xxxxx-xxxx" name="tel" class="cpf form-control validar" id="tel" value="<%= locals.old && old.tel %>">
-            <label for="tel">Celular</label>
+          <div data-toggle="tooltip" title="Descrição completa das características do produto" class="form-floating">
+            <input type="text" name="description" class="description form-control validar" id="tel" value="<%= locals.old && old.tel %>">
+            <label for="description">Descrição do Produto</label>
           </div>
-          <div class="form-floating">
-            <input type="email" placeholder="jose@mail.com.br" name="email" class="email form-control validar" id="email" value="<%= locals.old && old.email %>"> 
-            <label for="email">E-mail</label>
+          <div data-toggle="tooltip" title="número do SKU do produto" class="form-floating">
+            <input type="text" name="SKU" class="SKU form-control validar" id="email" value="<%= locals.old && old.email %>"> 
+            <label for="SKU">SKU</label>
           </div>
-          <div class="form-floating">
-            <input type="password" name="senha" id="password" class="senha form-control validar">
-            <label for="password">Senha</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" name="repeteSenha" id="repeatpassword" class="repetir-senha form-control validar">
-            <label for="repeatpassword">Repetir Senha</label>
-
+          <div data-toggle="tooltip" title="Ex: 51.71" class="form-floating">
+            <input type="text" name="price" id="price" class="h-300 price form-control validar">
+            <label for="price">Preço</label>
           </div>
 
           <div class="login-buttons">
-            <button type="submit" class="button home__button">Enviar</button>
+            <button type="submit" class="button home__button">Cadastrar</button>
           </div>
 
           <!-- Visualização da mensagem de sucesso -->

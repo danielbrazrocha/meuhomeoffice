@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { Product } = require('../models');
 const bcrypt = require("bcryptjs");
 const { validationResult } = require('express-validator');
 
@@ -34,63 +34,41 @@ const CadastroController =  {
         if (errors.isEmpty()) {
             
             // Desestruturando as informações para utilização no sequelize
-            const { nome, cpf, tel, email, senha, repeteSenha } = req.body;
+            const { nome, category, description, SKU, price } = req.body;
 
 
-            // Encriptando a senha
-            const passCrypt = bcrypt.hashSync(senha, 10);
-    
             try {
-
-                //vericando se o email já existe no banco de dados
-                const hasSameUserName = await User.findOne({ where: { email } });
-                if (hasSameUserName) {
-                    return res.render('cadastro', {
-                        arquivoCss: 'cadastro.css',
-                        error: "Já existe um usuário cadastrado com este email.",
-                        old: req.body
-                    });
-                }
-
-                //vericando se o CPF já existe no banco de dados
-                const hasSameCpf = await User.findOne({ where: { cpf } });
-                if (hasSameCpf) {
-                    return res.render('cadastro', {
-                        arquivoCss: 'cadastro.css',
-                        error: "Já existe um usuário cadastrado com este CPF.",
-                        old: req.body
-                    });
-                }
-
-
-
-                const user = await User.create({
-                    kind: 'user',
+                
+                // criando um novo produto
+                const product = await Product.create({
                     name: nome,
-                    cpf,
-                    tel,
-                    email,
-                    password: passCrypt,
+                    description,
+                    SKU,
+                    price,
+                    image: "/assets/products/002 - Suporte Monitor.jpg",
                     createAt: new Date().toISOString(),
-                    updatedAt: new Date().toISOString()
+                    updatedAt: new Date().toISOString(),
+                    category_id: category,
                 });
 
-                //verificando se o usuário foi criado existe no BD
-                if (!user) {
-                    return res.render('cadastro', {
+                console.log(product);
+
+                //verificando se o producto foi criado existe no BD
+                if (!product) {
+                    return res.render('adicionarProduto', {
                         arquivoCss: 'cadastro.css',
-                        error: "Erro na criação do usuário. Verifique as informações e tente novamente.",
+                        error: "Erro na criação do produto. Verifique as informações e tente novamente.",
                     });
                 }
         
-                return res.render('cadastro', {
+                return res.render('adicionarProduto', {
                     arquivoCss: 'cadastro.css',
-                    sucess: "Usuário criado com sucesso. Faça o login para continuar.",
+                    sucess: "Produto cadastrado com sucesso.",
                 });
                 
         } catch (err) {
-            // console.log(err);
-            return res.render('cadastro', {
+             console.log(err);
+            return res.render('adicionarProduto', {
                 arquivoCss: 'cadastro.css',
                 error: "Sistema indisponivel no momento. Tente novamente em alguns instantes.",
             });

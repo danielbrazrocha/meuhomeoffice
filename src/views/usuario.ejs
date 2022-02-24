@@ -3,8 +3,15 @@
 <main>
   <section>
     <div>
-      <p class="mt-5 text-center h2">Página de Informações do Usuário (toDo)</p>
-      <p class="mt-5 mb-5 text-center h4">Detalhes da conta...</p>
+      <p class="mt-5 text-center h2">Olá, <%= user.name %>!</p>
+      <p class="mt-5 mb-5 text-center h4">Detalhes da conta... (toDo)</p>
+      <p class="mt-5 mb-5 text-center h4">
+        
+        <% if (user.kind == 'admin') { %> 
+            <a class="btn" href="/adicionarProduto">
+              <button class="text-center button home__button">Adicionar Produto</button>
+            </a>
+        <% } %> 
     </div>
   </section>
 </main>
